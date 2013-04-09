@@ -1,0 +1,46 @@
+.white-bg{
+    position: relative;
+}
+
+div#mini-cart, #header .search_main{
+    position: absolute;
+    top:60px;
+    
+}
+
+div#mini-cart{
+    right: 180px;
+    padding:0 ;
+    top: 40px;
+}
+#header .search_main {
+    right: 0;
+    
+}
+
+#wrapper .featured-wrap.carousel #featured{
+    overflow: hidden !important;
+}
+
+#wrapper .home-blog .col-left{
+    width: 100%;
+    float: none;
+}
+
+.home #wrapper #main {
+    width: 100%;
+}
+
+ul.products {
+    width: 709px;
+}
+
+.col-left ul.products li.product{
+    float: left;
+    clear: none;
+}
+
+ul.products li.product img{
+    max-width: 175px;
+    height: 160px;
+}

@@ -1,0 +1,29 @@
+@charset "utf-8";
+/*
+Theme Name:     Whitelight Commerce Child
+Theme URI:      http: //alliedscientificpro.com/
+Description:    Child theme which optimises Whitelight for WooCommerce compatibility 
+Author:         Olivier
+Author URI:     http: //yafoy.com
+Template:       whitelight
+Version:        1.0
+*/
+
+
+@import url("../whitelight/style.css");
+@import url("woocommerce/css/style.css");
+@import url("custom.css");
+
+table.cart td.actions .coupon input {
+    width: 40%;
+}
+
+/* Yellow: Request a Quote button */
+input#btn_fcbe.checkout-button.button {
+	background-color: #faa732;
+	background: #faa732;
+}
+input#btn_fcbe.checkout-button.button:hover {
+	background-color: #fbb24b;
+	background: #fbb24b;
+}
