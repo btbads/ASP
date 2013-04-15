@@ -17,11 +17,16 @@ require_once ($woocommerce_path . 'theme-install.php' );						// Theme installat
 /* You can add custom functions below */
 /*-----------------------------------------------------------------------------------*/
 
+  /* Hung - 15/04/2013 hook to woocommerce */
 	function woocommerce_variable_empty_price_html_custom() {
-
-		return '<a class="contact-us-link" href="'. site_url() . '/contact-us' . '" title=" Contact Us"> Contact Us/Get a Quote</a>';
-
-    }
+		if(is_product()){
+			return '<a class="single_add_to_cart_button button alt" href="mailto:sales@alliedscientificpro.com?Subject=Please send a quote for '.get_the_title().'" title=" Contact Us"> Contact Us/Get a Quote</a>';
+		}else{
+			return '<a class="contact-us-links" href="mailto:sales@alliedscientificpro.com?Subject=Please send a quote for '.get_the_title().'" title=" Contact Us"> Contact Us/Get a Quote</a>';
+		}
+  }
+	/* Hung - 15/04/2013 hook to woocommerce */
+	add_filter ( 'woocommerce_empty_price_html', 'woocommerce_variable_empty_price_html_custom');
 
 	function woo_third_party_js() {
 	

@@ -129,7 +129,10 @@ if ( ! is_admin() || defined('DOING_AJAX') ) {
 	 * @see woocommerce_variable_add_to_cart()
 	 * @see woocommerce_external_add_to_cart()
 	 */
-	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+	/*-----------------------------------------------------------------------------------*/
+  /* Hung - 15/04/2013 hook to woocommerce */
+  /*-----------------------------------------------------------------------------------*/
+	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 15 );
 	add_action( 'woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30 );
 	add_action( 'woocommerce_grouped_add_to_cart', 'woocommerce_grouped_add_to_cart', 30 );
 	add_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 30 );
