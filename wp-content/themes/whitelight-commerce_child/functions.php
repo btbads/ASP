@@ -20,7 +20,7 @@ require_once ($woocommerce_path . 'theme-install.php' );						// Theme installat
   /* Hung - 15/04/2013 hook to woocommerce */
 	function woocommerce_variable_empty_price_html_custom() {
 		if(is_product()){
-			return '<a class="single_add_to_cart_button button alt" href="mailto:sales@alliedscientificpro.com?Subject=Please send a quote for '.get_the_title().'" title=" Contact Us"> Contact Us/Get a Quote</a>';
+			return '<a class="single_add_to_cart_button button alt" href="mailto:sales@alliedscientificpro.com?Subject=Please send a quote for '.get_the_title().'" title=" Contact Us"> Get a quote now!</a>';
 		}else{
 			return '<a class="contact-us-links" href="mailto:sales@alliedscientificpro.com?Subject=Please send a quote for '.get_the_title().'" title=" Contact Us"> Contact Us/Get a Quote</a>';
 		}
