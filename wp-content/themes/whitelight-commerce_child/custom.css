@@ -726,6 +726,11 @@ ul#shipping_method li {list-style-type: none;}
 
 body #login h1, body #login h1 a { height: 80px;}
 
+.woocommerce_error {
+	background-color: #f8cacb;
+	background: #f8cacb;
+}
+
 /* Buttons */
 /* Green: Add to cart, Proceed to checkout, View Cart */
 button.single_add_to_cart_button, input.checkout-button.button.alt, div.woocommerce_message a.button {
@@ -738,6 +743,10 @@ button.single_add_to_cart_button:hover, input.checkout-button.button.alt:hover, 
 }
 div.woocommerce_message a.button, div.woocommerce_message a.button:hover {
   border-color: #649c2a;
+}
+div.woocommerce_message {
+	background: #c6e6a4 !important;
+	background-color: #c6e6a4 !important;
 }
 /* Yellow: Request a Quote */
 input#btn_fcbe.checkout-button.button {
