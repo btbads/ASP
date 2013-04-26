@@ -122,7 +122,7 @@
 	  <a href="https://twitter.com/AlliedScienPro"><img id="twitter-icon" src="<?php echo site_url() . '/wp-content/plugins/ASP_plugin/images/twitter.jpg'; ?>"></a>
 	  <a href="http://www.linkedin.com/company/1668600"><img id="linkedin-icon" src="<?php echo site_url() . '/wp-content/plugins/ASP_plugin/images/linkedin.jpg'; ?>"></a>
 	  <a href="http://alliedscientificpro.com/asp-tv/"><img id="asp_tv-icon" height="52" src="<?php echo site_url() . '/wp-content/plugins/ASP_plugin/images/asp_tv.jpg'; ?>"></a>
-	  <img id="canada" src="<?php echo site_url() . '/wp-content/plugins/ASP_plugin/images/canada.png'; ?>" />
+	  <img id="canada" src="<?php echo site_url() . '/wp-content/plugins/ASP_plugin/images/flags.jpg'; ?>" />
 	</div>
     <?php
     if ( is_active_sidebar( 'wfeatured-motto' ) ) {

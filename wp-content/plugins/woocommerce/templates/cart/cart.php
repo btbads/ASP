@@ -120,7 +120,7 @@ global $woocommerce;
 					</div>
 				<?php } ?>
 
-				<input type="submit" class="button" name="update_cart" value="<?php _e('Update Cart', 'woocommerce'); ?>" /> <input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e('Proceed to Checkout &rarr;', 'woocommerce'); ?>" />
+				<input type="submit" class="button" name="update_cart" value="<?php _e('Update Cart', 'woocommerce'); ?>" /> <input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e('Checkout &rarr;', 'woocommerce'); ?>" />
 
 				<?php do_action('woocommerce_proceed_to_checkout'); ?>
 
