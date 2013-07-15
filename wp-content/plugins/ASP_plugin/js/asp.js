@@ -38,8 +38,8 @@ jQuery(document).ready(function() {
 			if(zcompany == 'Company Name' || zcompany.trim() =='')
 				err_msg = err_msg.concat("\n" + '- Company Name');
 				
-			if(zemails == 'Beneficiary Email (comma separated)' || zemails.trim() =='')
-				err_msg = err_msg.concat("\n" + '- Beneficiary Email');
+			// if(zemails == 'Beneficiary Email (comma separated)' || zemails.trim() =='')
+			// 	err_msg = err_msg.concat("\n" + '- Beneficiary Email');
 			
 			if(err_msg == '')
 			{

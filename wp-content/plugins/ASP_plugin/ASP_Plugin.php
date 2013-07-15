@@ -45,11 +45,11 @@ if (is_dir($qdir)) {
 				if($quote_opt == $file) 
 				{
 				?>
-                    <option value="<?php echo $file; ?>" selected="selected"><?php echo  strtoupper(basename($qdir . $file,".php")); ?></option>
+          <option value="<?php echo $file; ?>" selected="selected"><?php echo  strtoupper(basename($qdir . $file,".php")); ?></option>
 				<?php
 				} else { 
 				?>
-                    <option value="<?php echo $file; ?>"><?php echo  strtoupper(basename($qdir . $file,".php")); ?></option>
+          <option value="<?php echo $file; ?>"><?php echo  strtoupper(basename($qdir . $file,".php")); ?></option>
 				<?php
 				}
 			}
@@ -128,9 +128,9 @@ function quote_email()
 	if(empty($company))
 		$err_msg .= "\n" . "- Company Name";
 	
-	$emails = isset($_POST['emails']) ? ($_POST['emails'] == 'Send to (comma separated)*' ? '' : $_POST['emails']) : ''; 
-	if(empty($emails))
-		$err_msg .= "\n" . "- Beneficiary Email";
+	// $emails = isset($_POST['emails']) ? ($_POST['emails'] == 'Send to (comma separated)*' ? '' : $_POST['emails']) : ''; 
+	// if(empty($emails))
+	// 	$err_msg .= "\n" . "- Beneficiary Email";
 	
 	$address = isset($_POST['address']) ? ($_POST['address'] == 'Address' ? '' : $_POST['address']) : ''; 
 	$phone = isset($_POST['phone']) ? ($_POST['phone'] == 'Phone' ? '' : $_POST['phone']) : ''; 
@@ -157,7 +157,7 @@ function quote_email()
 	));
 	
 	$message = ob_get_clean();
-	$zmailer->send($emails,$subject,$message);
+	$zmailer->send($youremail,$subject,$message);
 	$zmailer->send(get_bloginfo('admin_email'),$subject,$message);
 	//if($zmailer->send($emails,$subject,$message))
 		echo 'Quote was successfully sent. Thank you.';
