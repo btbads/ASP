@@ -728,7 +728,6 @@ body #login h1, body #login h1 a { height: 80px;}
 
 .woocommerce_error {
 	background-color: #f8cacb;
-	background: #f8cacb;
 }
 
 /* Buttons */
@@ -753,4 +752,54 @@ input#btn_fcbe.checkout-button.button {
   background-color: rgb(250, 167, 50);
   background: rgb(250, 167, 50);
 }
+
+/* ------------------------------------------------------- */
+/* make button & some messages BIGGER (joel - 2013-07-25) (all the following CSS until the end of file) */
+/* ------------------------------------------------------- */
+
+.price a.button {font-style:italic; text-transform:uppercase;}
+.price a:hover {background-color: #ffa200;}
+
+/* popup in-page view cart: button size + color */
+ul.mini-cart li ul.cart_list li.buttons .button{
+  font-size:14px;
+  text-transform:uppercase;
+  font-style:italic;
+}
+ul.mini-cart li ul.cart_list li.buttons .button{ background-color: #35a0d0;}
+ul.mini-cart li ul.cart_list li.buttons .button:hover{ background-color: #0170c4;}
+ul.mini-cart li ul.cart_list li.buttons .button.checkout{ background-color: #79bc32;}
+ul.mini-cart li ul.cart_list li.buttons .button.checkout:hover{background-color: #3d8f00;}
+ul.mini-cart li ul.cart_list li.cart_list_product a{ font-weight:normal;}
+
+.woocommerce_message .button {font-size:16px; font-style:italic; text-transform:uppercase;}
+.quantity{
+  font-size: 1.5em;
+  margin:1px 2px;
+  white-space: nowrap;
+}
+.minus{position:relative; top:-1px;}
+.plus{position:relative; top:-1px;}
+.single-product .summary form.cart .button{
+  font-size:18px;
+  padding:10px 22px;
+  line-height:auto;
+  font-style:italic
+}
+
+/* make cart buttons & other page button all uppercase */
+table.cart td.actions .button{
+  text-transform:uppercase;
+}
+/* checkout green button bigger */
+input.checkout-button.button.alt{
+  font-size: 18px;
+  padding:10px 22px;
+  line-height:auto;
+  font-style:italic;
+}
+
+/* checkout: place order button*/
+#place_order{background-color: #3d8f00; text-transform:uppercase; font-style:italic;}
+
 /* -- end buttons -- */
