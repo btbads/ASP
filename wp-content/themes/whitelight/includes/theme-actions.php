@@ -107,6 +107,7 @@ if ( ! function_exists( 'woo_load_frontend_css' ) ) {
 	} // End woo_load_frontend_css()
 }
 
+
 /*-----------------------------------------------------------------------------------*/
 /* Load responsive <meta> tags in the <head> */
 /*-----------------------------------------------------------------------------------*/
@@ -258,8 +259,8 @@ if ( ! function_exists( 'woo_custom_styling' ) ) {
 		}
 		
 		if ( $settings['button_color'] != '' ) {
-			$output .= 'a.button, a.comment-reply-link, #commentform #submit, #contact-page .submit, body input[type="submit"] { background: ' . $settings['button_color'] . ' !important; border-color: ' . $settings['button_color'] . ' !important; filter: none; }' . "\n";
-			$output .= 'a.button:hover, a.button.hover, a.button.active, a.comment-reply-link:hover, #commentform #submit:hover, #contact-page .submit:hover, body input[type="submit"] { background: ' . $settings['button_color'] . ' !important; opacity: 0.9; }' . "\n";
+			$output .= 'a.button, #commentform #submit, #contact-page .submit, body input[type="submit"] { background: ' . $settings['button_color'] . ' !important; border-color: ' . $settings['button_color'] . ' !important; filter: none; }' . "\n";
+			$output .= 'a.button:hover, a.button.hover, a.button.active, #commentform #submit:hover, #contact-page .submit:hover, body input[type="submit"] { background: ' . $settings['button_color'] . ' !important; opacity: 0.9; }' . "\n";
 		}
 		
 		if ( $settings['navhover_color'] != '' ) {
@@ -481,6 +482,55 @@ if ( ! function_exists( 'woo_load_responsive_IE_footer' ) ) {
 	} // End ()
 }
 
+add_filter( 'body_class', 'woo_add_lightbox_body_class', 10 );
+
+/*-----------------------------------------------------------------------------------*/
+/* Add custom CSS class to the <body> tag if the lightbox option is enabled. */
+/*-----------------------------------------------------------------------------------*/
+
+add_filter( 'body_class', 'woo_add_lightbox_body_class', 10 );
+
+function woo_add_lightbox_body_class ( $classes ) {
+	global $woo_options;
+	
+	if ( isset( $woo_options['woo_enable_lightbox'] ) && $woo_options['woo_enable_lightbox'] == 'true' ) {
+		$classes[] = 'has-lightbox';
+	}
+
+	if ( is_tax( 'portfolio-gallery' ) || is_post_type_archive( 'portfolio' ) || is_page_template( 'template-portfolio.php' ) || ( is_singular() && get_post_type() == 'portfolio' ) ) {
+		$classes[] = 'portfolio-component';
+	}
+		
+	return $classes;
+} // End woo_add_lightbox_body_class()
+
+/*-----------------------------------------------------------------------------------*/
+/* Load PrettyPhoto JavaScript and CSS if the lightbox option is enabled. */
+/*-----------------------------------------------------------------------------------*/
+
+add_action( 'woothemes_add_javascript', 'woo_load_prettyphoto', 10 );
+add_action( 'woothemes_add_css', 'woo_load_prettyphoto', 10 );
+
+function woo_load_prettyphoto () {
+	global $woo_options;
+	
+	if ( ! isset( $woo_options['woo_enable_lightbox'] ) || $woo_options['woo_enable_lightbox'] == 'false' ) { return; }
+	
+	$filter = current_filter();
+	
+	switch ( $filter ) {
+		case 'woothemes_add_javascript':
+			wp_enqueue_script( 'enable-lightbox' );
+		break;
+		
+		case 'woothemes_add_css':
+			wp_enqueue_style( 'prettyPhoto' );
+		break;
+		
+		default:
+		break;
+	}
+} // End woo_load_prettyphoto()
 
 /*-----------------------------------------------------------------------------------*/
 /* END */

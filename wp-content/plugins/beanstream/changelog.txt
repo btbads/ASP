@@ -1,0 +1,22 @@
+*** Beanstream Change Log ***
+
+2013.01.25 - version 1.3.3
+ * Validated WooCommerce 2.0 compatibility
+
+2013.01.18 - version 1.3.2
+ * Added '--' to Beanstream request for countries with no state/province.
+
+2012.12.05 - version 1.3.1
+ * Updater
+
+2012.10.15 - version 1.3
+ * Replaced depricated function - split()
+
+2012.10.15 - version 1.2
+ * Added CVV to transaction that is sent to Beanstream.
+
+2012.09.28 - version 1.1
+ * Added Card Types drop down to checkout page and settings options to enable/disable.
+
+2012.06.14 - version 1.0
+ * First Release

@@ -1,5 +1,195 @@
 *** Whitelight Changelog ***
 
+2013.02.25 - version 1.4.10
+ * style.css - Shortcode tabs styling fix.
+ * single-portfolio.php - fixed bug on comments settings.
+ * /css/woocommercs.css - Simplified cart table on mobile resolutions to avoid overflow.
+ * /includes/theme-functions.php - Removed 'woo_third_party_js' function (was used to call uniform.js, which was removed), fixed bug on comments settings, and portfolio images pagination bug
+ * /includes/theme-woocommerce.php - Added add_theme_support( 'woocommerce' ), fixed pagination bug for WC2.0;
+
+2013.02.11 - version 1.4.9
+ * style.css - Slider fix to try and avoid 'flickering' in safari.
+ * /includes/theme-js.php - Removed all uniform.js referances
+ * /includes/js/uniform.js - Removed JS file
+
+2013.02.06 - version 1.4.8
+ * style.css - Images with captions are now responsive.
+ * includes/js/jquery.prettyPhoto.js - Updated prettyPhoto to v3.1.5 - fixes 'undefined' bug in images with no caption.
+
+2013.01.30 - version 1.4.7
+ * header.php
+   includes/theme-woocommerce.php - Fixed header cart bug
+
+2013.01.28 - version 1.4.6
+ * includes/featured.php
+   style.css - slider pagination now displays when using slide animation style
+ * includes/theme-woocommerce.php
+   style.css - The header cart now uses the native WooCommerce widget
+ * includes/theme-functions.php,
+   includes/theme-js.php - change get_stylesheet to get_template so it doesn't look in child theme folder for JS files
+
+2013.01.22 - version 1.4.5
+ * header.php - removed viewport code as it is already in theme-actions.php
+
+2013.01.17 - version 1.4.4
+ * /includes/theme-functions.php - Remove logic to modify the homepage query if the "page content" theme option is active (leave only the "blog" modification).
+ * /includes/homepage-blog-panel.php - Add logic to conditionally display page content if the "page content" theme option is active.
+
+2013.01.15 - version 1.4.3
+ * /includes/js/portfolio.js - fixed portfolio stacking bug with WP 3.5
+
+2013.01.10 - version 1.4.2
+ * includes/theme-functions.php - Disable Mousescroll option was not working (Contact Page)
+ * includes/homepage-shop-panel.php - Homepage products were all showing the price of the first product displayed.
+ * includes/js/portfolio.js - Added fix for Portfolio grid bug.
+ * css/layout.css - Added fix for Portfolio grid bug.
+ * css/woocommerce.css - WooCommerce 2.0 compatibility.
+ * styles/*ALL*.css - WooCommerce 2.0 compatibility.
+
+2012.12.20 - version 1.4.1
+ * includes/theme-options.php - Gettext'ed all theme options and custom fields. incomplete
+ * style.css - Fixed styling issue with FlexSlider 2.1 & Added support for WooTabs
+ * includes/layout.css - Fixed styling issue with FlexSlider 2.1
+ * lang/en_GB.po - Rescanned language file
+
+2012.12.06 - version 1.4
+ * WooCommerce 2.0 compatibility
+ * style.css - fixed post images to be responsive in height (moved from layout.css)
+
+2012.12.04 - version 1.3.6
+ * /includes/widgets/widget-woo-componentbase.php - changed description of the Blog option to a more accurate description
+ * wpml-config.xml - added additional theme options for translation
+
+2012.11.21 - version 1.3.5
+ * includes/theme-options.php - added exclude category from blog to Layout Options
+ * style.css - Contact page twitter, subscribe & connect styling fixes.
+
+2012.11.19 - version 1.3.4
+ * style.css - updated slider to the latest version of flexslider v2.1
+ * /includes/js/jquery.flexslider.min.js - updated slider to the latest version of flexslider v2.1
+ * header.php - woocommerce cart mfunc wrapper for caching plugins
+ * /includes/theme-woocommerce.php - woocommerce cart mfunc wrapper functions
+ * loop-portfolio - fixed gallery output bugs
+ * template-feedback.php - fixed pagination issue
+ * wpml-config.xml - added wpml config file
+
+2012.11.08 - version 1.3.3
+ * /css/woocommerce.css - fixed product description lists styling
+ * content-features.php - fixed missing image output
+ * single-features.php - fixed missing image output
+ * /includes/js/enable-lightbox.php - fixed missing image title for lightbox
+ * /includes/js/general.php - fixed missing image title for lightbox
+
+2012.10.04 - version 1.3.2
+ * - PLEASE RE-SAVE YOUR THEME OPTIONS. -
+ * /includes/theme-options.php - Added option to chose slide/fade for featured slider, changed wording in "Enable Slider Title" and "Enable Slider Description" and added lightbox option.
+ * /includes/theme-functions.php - Briefly cater for the "The Events Calendar" plugin when displaying the homepage content. Fix homepage redirect when attempting to view the events calendar.
+ * style.css - Removed slide content from mobile view if disabled
+ * /includes/theme-actions.php - Removed the reply button from the buttons custom styling.
+ * header.php - Added WooCommerce search option to the header search.
+ * template-sitemap.php - Fix to remove hidden items from the WooCommerce product list.
+ * /includes/theme-js.php - Added Lighbox script
+ * /includes/js/enable-lightbox.js - *NEW* Lightbox script
+
+2012.10.03 - version 1.3.1
+ * woocommerce.css fix sidebar issue in mobile orientation
+
+2012.09.13 - version 1.3.0
+ * Native WooCommerce Support
+ * functions.php - Load WooCommerce functions only if WooCommerce is active.
+ * /css/woocommerce.css - ADDED - WooCommerce styles.
+ * /css/woocommerce.less - ADDED - WooCommerce styles.
+ * /images/icons/* - ADDED - WooCommerce icons.
+ * /images/ajax-loader.gif - ADDED - WooCommerce AJAX loader graphic.
+ * /includes/theme-woocommerce.php - ADDED - WooCommerce-specific functions.
+ * /includes/theme-functions.php - Make the woo_third_party_js() function pluggable.
+ * /includes/sidebar-init.php - Move the registration of the "Homepage" widget area to be in last place. Fixes potential widget placement issue when switching from a theme that uses the "sidebar-1" naming convention.
+ * template-sitemap.php - modified with additional WooCommerce functionality
+
+2012.08.23 - version 1.2.7
+ * /css/layout.css - css for when title and description are on or off.
+ * /includes/featured.php - logic for title and description being on or off.
+ * /includes/theme-options.php - Reorganized homepage-related options, options for title and description being on or off, removed random ordering for blog panel due to pagination conflict.
+ * /includes/theme-functions.php - removed random ordering for blog panel due to pagination conflict.
+ * /includes/homepage-blog-alt-panel.php - removed random ordering for blog panel due to pagination conflict.
+
+2012.08.10 - version 1.2.6
+ * includes/theme-options.php - Fixed lightbox video output.
+
+2012.07.31 - version 1.2.5
+ * images/ico-subscibe-connect.png - Updated Twitter & Google Plus logo
+ * includes/js/general.js - Fixed slide class for FitVids.
+
+2012.07.25 - version 1.2.4
+ * includes/homepage-blog-panel.php - Fixed query for pagination problem
+ * includes/homepage-blog-alt-panel.php - Fixed query for pagination problem
+ * includes/theme-functions.php - Added filter for main query to fix pagination problem
+ * css/layout.css - Clearfix for WooCommerce layouts
+ * style.css - Clearfix for WooCommerce layouts
+
+2012.07.24 - version 1.2.3
+ * includes/homepage-portfolio-panel.php - Fixed portfolio thumbnail sizes
+
+2012.07.23 - version 1.2.2
+ * images/twitter.png - updated twitter logo
+
+2012.07.02 - version 1.2.1
+ * style.css - Fixed features single post alignment in content
+
+2012.06.11 - version 1.2.0
+ * /includes/theme-js.php - Change 'third party' to 'third-party' and add 'third-party' as a dependency on 'general'.
+ * /includes/theme-functions.php - Change bloginfo('template_url') to get_template_directory_uri(). Add "alt" option to woo_get_post_images(). Add 'woothemes' textdomain to comment form labels.
+ * /includes/homepage-portfolio-panel.php - Replace bloginfo('template_directory') with get_template_directory_uri().
+ * /includes/widgets/widget-woo-twitter.php - Replace bloginfo('template_directory') with get_template_directory_uri().
+ * includes/js/general.js - Added single portfolio gallery to FitVids script
+ * header.php - Replace bloginfo( 'url' ) with home_url( '/' ).
+ * loop-portfolio.php - Convert gallery images to include the image tag, which makes use of the newly added "alt" attribute in the woo_get_post_images() function.
+
+2012.05.31 - version 1.1.22
+ * style.css - Fixed current page menu styling
+ * css/layout.css - Fixed current page menu styling
+
+2012.05.23 - version 1.1.21
+ * style.css - Fixed word-wrap and line-height for email address in the "Contact Us" widget.
+
+2012.05.14 - version 1.1.20
+ * content.php - fix for more tag on homepage
+ * includes/homepage-portfolio-panel.php - fix for videos in lightbox gallery
+ * includes/theme-options.php - fix for videos in lightbox gallery
+
+2012.05.07 - version 1.1.19
+ * archive-features.php - implemented post_type_archive_title()
+ * includes/hompeage-features-panel.php - remove features img tag if not uploaded image
+
+2012.05.03 - version 1.1.18
+ * styles/*.css - Fixed alt styles for child themes
+
+2012.04.23 - version 1.1.17
+ * includes/homepage-blog-alt-panel.php - fixed thumbnail theme options settings
+ * loop-portfolio.php - added filter for gallery slugs
+
+2012.04.19 - version 1.1.16
+ * index.php - fixed pagination variable
+ * homepage-blog-panel.php - fixed pagination variable
+ * loop-portfolio.php - fixed pagination variable
+ * template-blog.php - fixed pagination variable
+
+2012.04.16 - version 1.1.15
+ * styles/white-leather.css - Fixed drop-down hover colors
+
+2012.04.10 - version 1.1.14
+ * style.css - Changed breadcrumbs to fade out instead of wrap to new line on smaller screens
+ * styles/*.css - Fixed text title & decription colors for custom options
+ * includes/widgets/widget-woo-componentbase.php - fixed bug for multiple components per widgetized area
+
+2012.04.02 - version 1.1.13
+ * style.css - Clearfix for homepage features
+ * includes/homepage-features-panel.php - Clearfix for features
+ * includes/homepage-blog-panel.php - fix for categories filter
+
+2012.03.29 - version 1.1.12
+ * /includes/theme-functions.php - Contact Form Map undefined notice fix
+
 2012.03.28 - version 1.1.11
  * styles/*.css - Fixed referance for feedback widget pagination images
 
@@ -87,7 +277,7 @@
  * includes/theme-functions.php - Added clearfix for subscribe & connect widget
  * styles/dark-glossy.css - Fixed textarea background colours on commentforms. Twitter link color in footer widgets. Fixed drop down menu bug.
  * styles/dark-wood.css - Fixed textarea background colours on commentforms. Fixed drop down menu bug.
- 
+
 2012.02.17 - version 1.0.5
  * includes/featured.php - Adjusted slider excerpt length
  * template-contact.php - Fixed page title font
@@ -102,7 +292,7 @@
  * loop-portfolio.php,
    includes/homepage-portfolio-panel.php - posts order and custom URL
  * page.php - remove breadcrumb if static front page set.
- 
+
 
 2012.02.13 - version 1.0.3
  * includes/theme-actions.php - Added filter:none, so that custom BG styling works for alt styles with vertical gradients.
@@ -126,7 +316,7 @@
  * single-portfolio.php - tweaked lightbox gallery functionality
  * styles/dark-wood.css,
    dark-glossy.css - WooCommerce message font color.
-	
+
 2012.02.08 - version 1.0.1
  * style.css - Portfolio page template sizes & margins
  						 - Fixed iPad horizontal scroll
@@ -142,7 +332,7 @@
  * loop-portfolio.php - fixed lighthouse duplicate image issue
  * includes/theme-options.php,
    includes/homepage-portfolio-panel.php,
-   includes/homepage-features-panel.php - Added option for custom URL for the features/portfolio module archives link 
+   includes/homepage-features-panel.php - Added option for custom URL for the features/portfolio module archives link
 
 2012.02.07 - version 1.0
  * First release!

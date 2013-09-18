@@ -49,22 +49,29 @@ if ( isset( $woo_options['woo_portfolio_thumb_height'] ) && ( $woo_options['woo_
 /* Setup portfolio galleries navigation. */
 $galleries = array();
 $galleries = get_terms( 'portfolio-gallery' );
+$exclude_str = '';
 $to_exclude = array();
-
-/* Optionally exclude navigation items. */
 if ( isset( $woo_options['woo_portfolio_excludenav'] ) && ( $woo_options['woo_portfolio_excludenav'] != '' ) ) {
-	$to_exclude = explode( ',', $woo_options['woo_portfolio_excludenav'] );
+	$exclude_str = $woo_options['woo_portfolio_excludenav'];
 }
 
-if ( is_array( $to_exclude ) ) {
-	foreach ( $to_exclude as $k => $v ) {
-		$to_exclude[$k] = str_replace( ' ', '', $v );
-	}
+// Allow child themes/plugins to filter here.
+$exclude_str = apply_filters( 'woo_portfolio_gallery_exclude', $exclude_str );
+
+/* Optionally exclude navigation items. */
+if ( $exclude_str != '' ) {
+	$to_exclude = explode( ',', $exclude_str );
 	
-	/* Remove the galleries to be excluded. */
-	foreach ( $galleries as $k => $v ) {
-		if ( in_array( $v->slug, $to_exclude ) ) {
-			unset( $galleries[$k] );
+	if ( is_array( $to_exclude ) ) {
+		foreach ( $to_exclude as $k => $v ) {
+			$to_exclude[$k] = str_replace( ' ', '', $v );
+		}
+		
+		/* Remove the galleries to be excluded. */
+		foreach ( $galleries as $k => $v ) {
+			if ( in_array( $v->slug, $to_exclude ) ) {
+				unset( $galleries[$k] );
+			}
 		}
 	}
 }
@@ -87,7 +94,7 @@ if ( is_tax() ) {
 
 if ( ! is_tax() ) {
 
-$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; 
+if ( get_query_var( 'page' ) > 1) { $paged = get_query_var( 'page' ); } elseif ( get_query_var( 'paged' ) > 1) { $paged = get_query_var( 'paged' ); } else { $paged = 1; } 
 $query_args = array(
 				'post_type' => 'portfolio', 
 				'paged' => $paged, 
@@ -184,9 +191,11 @@ if ( have_posts() ) : $count = 0; ?>
 		<?php
 			// Output image gallery for lightbox
         	if ( ! empty( $settings['gallery'] ) ) {
-            	foreach ( array_slice( $settings['gallery'], 1 ) as $img => $attachment ) {
-            		if ( $attachment['url'] != $image_src ) {
-            			echo '<a ' . $settings['rel'] . ' title="' . $attachment['caption'] . '" href="' . $attachment['url'] . '" class="gallery-image"></a>' . "\n";	
+        		// Test for Featured Image
+        		$post_thumbnail_id = get_post_thumbnail_id( $post->ID );
+            	foreach ( $settings['gallery'] as $img => $attachment ) {
+            		if ( $attachment['id'] != $post_thumbnail_id ) {
+            			echo '<a ' . $settings['rel'] . ' title="' . $attachment['caption'] . '" href="' . $attachment['url'] . '" class="gallery-image"><img src="' . esc_url( $attachment['url'] ) . '" alt="' . esc_attr( $attachment['alt'] ) . '" /></a>' . "\n";	
             		}                    
             	}
             }

@@ -60,9 +60,12 @@ class Woo_Widget_Component extends WP_Widget {
 		$this->woo_widget_componentslist = array(
 												'features' => __( 'Features', 'woothemes' ), 
 												'portfolio' => __( 'Portfolio', 'woothemes' ),
-												'blog' => __( 'Blog', 'woothemes' ),
+												'blog' => __( 'Content/Blog', 'woothemes' ),
 												'blog-alt' => __( 'Blog Alternate Layout', 'woothemes' )
 												);
+		if ( is_woocommerce_activated() ) {
+			$this->woo_widget_componentslist['shop'] = __( 'Shop', 'woothemes' );
+		}
 		
 		/* Widget settings. */
 		$this->widget_ops = array( 'classname' => $this->woo_widget_cssclass, 'description' => $this->woo_widget_description );
@@ -88,7 +91,7 @@ class Woo_Widget_Component extends WP_Widget {
 		
 		$component = $instance['component'];
 		
-		if ( $component != '' ) { locate_template( 'includes/homepage-' . $component . '-panel.php', true ); }
+		if ( $component != '' ) { get_template_part( 'includes/homepage-' . $component . '-panel' ); }
 
 	} // End widget()
 

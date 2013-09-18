@@ -67,7 +67,7 @@ body{
 		margin-right:20px;
 		position:absolute;
 		top:65px;
-		right:244px;
+		right:258px;
 	}
 	#top-menu a, #top-menu a:hover{
 		font-family:Arial, Helvetica, sans-serif;
@@ -86,7 +86,7 @@ body{
 	div#mini-cart{
 		display:block;
 		padding-top:66px;
-		padding-right:180px;
+		padding-right:200px;
 	}
 
 	.mini-cart a.cart-parent{
@@ -740,10 +740,11 @@ button.single_add_to_cart_button:hover, input.checkout-button.button.alt:hover, 
   background-color: #79bc32;
   background: #79bc32;
 }
-div.woocommerce_message a.button, div.woocommerce_message a.button:hover {
+div.woocommerce_message a.button, div.woocommerce_message a.button:hover,
+div.woocommerce-message a.button, div.woocommerce-message a.button:hover {
   border-color: #649c2a;
 }
-div.woocommerce_message {
+div.woocommerce_message, div.woocommerce-message {
 	background: #c6e6a4 !important;
 	background-color: #c6e6a4 !important;
 }

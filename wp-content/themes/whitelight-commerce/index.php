@@ -18,26 +18,23 @@
  */
 	
 	$settings = array(
-					'thumb_w' => 100, 
-					'thumb_h' => 100, 
-					'thumb_align' => 'alignleft',
-					'featured' => 'false',
 					'custom_intro_message' => 'false',
 					'custom_intro_message_text' => '',
 					'features_area' => 'false',
 					'portfolio_area' => 'false',
-					'blog_area' => 'true',
+					'blog_area' => 'false',
+					'alt_blog_area' => 'false',
 					'shop_area' => 'true'
 					);
 					
 	$settings = woo_get_dynamic_values( $settings );
-	
+	if ( get_query_var( 'page' ) > 1) { $paged = get_query_var( 'page' ); } elseif ( get_query_var( 'paged' ) > 1) { $paged = get_query_var( 'paged' ); } else { $paged = 1; }
 ?>
 		
-	<?php if ( !$paged && $settings['custom_intro_message'] == "true" ) { ?>
+	<?php if ( ( $paged == 1 ) && $settings['custom_intro_message'] == "true" ) { ?>
 	<section id="intro">
     	<div class="col-full">
-        	<h1><?php echo $settings['custom_intro_message_text']; ?></h1>
+        	<h1><?php echo stripslashes( $settings['custom_intro_message_text'] ); ?></h1>
     	</div>
     </section>
     <?php } ?>
@@ -49,13 +46,17 @@
     	/* Make sure we switch to the selected layout if a custom layout isn't set. */
 		if ( ! is_active_sidebar( 'homepage' ) ) {
 			// Output the Features Panel	
-			if ( !$paged && $settings['features_area'] == 'true' ) { get_template_part( 'includes/homepage-features-panel' ); } // End If Statement
+			if ( ( $paged == 1 ) && $settings['features_area'] == 'true' ) { get_template_part( 'includes/homepage-features-panel' ); } // End If Statement
 			// Output the Portfolio Panel	
-			if ( !$paged && $settings['portfolio_area'] == 'true' ) { get_template_part( 'includes/homepage-portfolio-panel' ); } // End If Statement
+			if ( ( $paged == 1 ) && $settings['portfolio_area'] == 'true' ) { get_template_part( 'includes/homepage-portfolio-panel' ); } // End If Statement
 			// Output the Shop Panel
-			if ( !$paged && $settings['shop_area'] == 'true' ) { get_template_part( 'includes/homepage-shop-panel' ); } // End If Statement
-			// Output the Blog Panel	
-			if ( $settings['blog_area'] == 'true' ) { get_template_part( 'includes/homepage-blog-panel' ); } // End If Statement
+			if ( is_woocommerce_activated() && ( $paged == 1 ) && $settings['shop_area'] == 'true' ) { get_template_part( 'includes/homepage-shop-panel' ); } // End If Statement
+			
+			// Output the Blog Area	
+			if ( $settings['alt_blog_area'] == 'true' ) { get_template_part( 'includes/homepage-blog-alt-panel' ); wp_reset_query(); } 
+
+			// Output the Content Area	
+			if ( $settings['blog_area'] == 'true' ) { get_template_part( 'includes/homepage-blog-panel' ); wp_reset_query(); } 
 		} else {
 			// Output the Widgetized Area
 			dynamic_sidebar( 'homepage' );

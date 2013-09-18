@@ -134,9 +134,9 @@
 	            <div class="fix"></div>
 	            <?php
 	            	// Determine wether or not to display comments here, based on "Theme Options".
-	            	if ( isset( $woo_options['woo_comments'] ) && in_array( $woo_options['woo_comments'], array( 'post', 'both' ) ) ) {
+	            	if ( isset( $woo_options['woo_comments'] ) && in_array( $woo_options['woo_comments'], array( 'post', 'both' ) ) && comments_open() ) {
 	            		comments_template();
-	            	}
+	            	} // End If Statement
 	
 					} // End WHILE Loop
 				} else {

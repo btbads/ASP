@@ -9,6 +9,8 @@
  */
  
  global $woo_options;
+ global $woocommerce;
+ if ( get_query_var( 'page' ) > 1) { $paged = get_query_var( 'page' ); } elseif ( get_query_var( 'paged' ) > 1) { $paged = get_query_var( 'paged' ); } else { $paged = 1; }
  
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -50,14 +52,14 @@
 		    if ( isset( $woo_options['woo_logo'] ) && $woo_options['woo_logo'] != '' ) { $logo = $woo_options['woo_logo']; }
 		?>
 		<?php if ( ! isset( $woo_options['woo_texttitle'] ) || $woo_options['woo_texttitle'] != 'true' ) { ?>
-		    <a id="logo" href="<?php bloginfo( 'url' ); ?>" title="<?php bloginfo( 'description' ); ?>">
+		    <a id="logo" href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'description' ); ?>">
 		    	<img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" />
 		    </a>
 	    <?php } ?>
 	    
 	    <hgroup>
 	        
-			<h1 class="site-title"><a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			<h3 class="nav-toggle"><a href="#navigation"><?php _e('Navigation', 'woothemes'); ?></a></h3>
 		      	
@@ -75,7 +77,7 @@
 			<?php } ?>
 		</div><!-- /#topad -->
         <?php } ?>
-		
+        
 		<nav id="navigation" role="navigation">
 			<?php
 			if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
@@ -88,14 +90,17 @@
 				<?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?>
 			</ul><!-- /#nav -->
     	    <?php } ?>
-    	    		
+		
 		</nav><!-- /#navigation -->
+		
+		<?php if ( is_woocommerce_activated() ) { $woocommerce->mfunc_wrapper( 'whitelight_woocommerce_cart()', 'whitelight_woocommerce_cart', $woocommerce ); } ?>
 		
 		<?php if ( isset( $woo_options['woo_header_search'] ) && $woo_options['woo_header_search'] == 'true' ) { ?>
 		<div class="search_main fix">
 		    <form method="get" class="searchform" action="<?php echo home_url( '/' ); ?>" >
 		        <input type="text" class="field s" name="s" value="<?php esc_attr_e( 'Search…', 'woothemes' ); ?>" onfocus="if ( this.value == '<?php esc_attr_e( 'Search…', 'woothemes' ); ?>' ) { this.value = ''; }" onblur="if ( this.value == '' ) { this.value = '<?php esc_attr_e( 'Search…', 'woothemes' ); ?>'; }" />
 		        <input type="image" src="<?php echo get_template_directory_uri(); ?>/images/ico-search.png" class="search-submit" name="submit" alt="Submit" />
+		   		<?php if ($woo_options['woo_header_search_scope'] == 'products' ) { echo '<input type="hidden" name="post_type" value="product" />'; } else { echo '<input type="hidden" name="post_type" value="post" />'; } ?>
 		    </form>    
 		</div><!--/.search_main-->
 		<?php } ?>
@@ -106,6 +111,6 @@
 	
 	<?php 
 		// Featured Slider
-		if ( ( is_home() || is_front_page() ) && !$paged && isset( $woo_options['woo_featured'] ) && $woo_options['woo_featured'] == 'true' ) 
+		if ( ( is_home() || is_front_page() ) && ( $paged == 1 ) && isset( $woo_options['woo_featured'] ) && $woo_options['woo_featured'] == 'true' ) 
 			get_template_part ( 'includes/featured' ); 
-	?>	
+		?>

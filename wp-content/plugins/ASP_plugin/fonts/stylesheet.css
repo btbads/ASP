@@ -1,0 +1,24 @@
+/*@font-face {
+    font-family: 'MyriadPro-Regular';
+	src: url("myriadpro-regular.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'MyriadPro-Bold';
+	src: url("myriadpro-bold.otf") format('opentype');
+}*/
+
+@font-face {
+    font-family: 'BellGothic-Std';
+	src: url("bellgothic-std.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'BellGothic-Bold';
+	src: url("bellgothicstd-bold.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'BellGothic-Black';
+	src: url("bellgothicstd-black.otf") format('opentype');
+}

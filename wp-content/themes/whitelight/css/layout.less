@@ -34,10 +34,6 @@ INDEX
 /* Adding padding to left & right of content columns */
 #top, #header, #content, #intro, #footer-widgets, #footer  { padding-left: 20px; padding-right: 20px; }
 
-@media only screen and (max-width: 767px)  {
-	.flex-direction-nav  { display: none; }
-}
-
 /* Adjust header elements positioning between 768px & 920px */
 @media only screen and (min-width: 768px) and (max-width: 920px) {
 	#logo, hgroup  { float: none!important; }
@@ -47,7 +43,7 @@ INDEX
 
 /* Move normal width slider navigation elements for high resolutions */
 @media only screen and (min-width: 1024px) {
-	.featured-wrap .controls-container  { 
+	.featured-wrap .controls-container  {
 		ul.flex-direction-nav  {
 			top: 44%;
 			.prev  {
@@ -67,7 +63,7 @@ INDEX
 
 /* Only apply to iPad portrait and up */
 @media only screen and (min-width: 768px) {
-	
+
 	/* 1. TOP NAVIGATION */
 	#top {
 		background: @bg_dark;
@@ -76,9 +72,9 @@ INDEX
 		#top-nav { display: block; }
 		.nav {
 			a {
-				color: @bg_light; 
-				padding:6px 10px; 
-				line-height: 1.4; 
+				color: @bg_light;
+				padding:6px 10px;
+				line-height: 1.4;
 				text-decoration:none;
 				font-size: 0.95em;
 				text-shadow:none;
@@ -101,29 +97,29 @@ INDEX
 						}
 					}
 				}
-				&.current_page_item, &.current_page_parent, &.current-menu-ancestor, &.current-cat, &.li.current-menu-item {
+				&.current_page_item, &.current_page_parent, &.current-menu-ancestor, &.current-cat, &.current-menu-item {
 					a { background: lighten(@bg_dark,10%); }
 				}
 				ul {
-					background: lighten(@bg_dark,10%); 
-					margin:0; 
-					padding:0px; 
-					width: 180px; 
-					border: none; 
+					background: lighten(@bg_dark,10%);
+					margin:0;
+					padding:0px;
+					width: 180px;
+					border: none;
 					z-index:999;
 					.box_shadow(0,2px,2px,0,rgba(0,0,0,0.1));
 					.border_radius_bottom(4px);
 					position: absolute;
 					&:last-child {
 						a { .border_radius_bottom(4px); }
-					} 
+					}
 					li {
 						background: lighten(@bg_dark,10%);
 						a {
-							padding:4px 10px; 
-							width:160px; 
-							color: lighten(@color_body, 50%); 
-							background:lighten(@bg_dark,10%)!important; 
+							padding:4px 10px;
+							width:160px;
+							color: lighten(@color_body, 50%);
+							background:lighten(@bg_dark,10%)!important;
 							font-size:0.9em;
 							&:hover { background: lighten(@bg_dark,15%)!important }
 						}
@@ -136,7 +132,7 @@ INDEX
 									border-color:transparent transparent transparent lighten(@bg_dark,50%)!important;
 								}
 								&:hover:after  {
-									border-color:transparent transparent transparent #fff;	
+									border-color:transparent transparent transparent #fff;
 								}
 							}
 						}
@@ -146,7 +142,7 @@ INDEX
 			}
 		}
 	}
-	
+
 	/* 2. MAIN NAVIGATION DROPDOWN MENUS */
 	h3.nav-toggle { display: none; }
 	#navigation  {
@@ -157,9 +153,9 @@ INDEX
 		.nav li {
 			a  { .border_radius(3px); }
 			&.parent {
-				> a { 
+				> a {
 					position: relative;
-					padding-right:1.8em; 
+					padding-right:1.8em;
 					&:after {
 						content: "";
 						display: block;
@@ -177,21 +173,21 @@ INDEX
 					&:after  { border-color: #fff transparent transparent transparent!important; }
 				}
 			}
-			
+
 	   		ul {
 	   			background: @color_links;
-	   			.border_radius(3px); 
-	   			margin: -3px 0 0 0px; 
-	   			padding: 10px 15px; 
-	   			position: absolute; 
-	   			width: 180px; 
+	   			.border_radius(3px);
+	   			margin: -3px 0 0 0px;
+	   			padding: 10px 15px;
+	   			position: absolute;
+	   			width: 180px;
 	   			border: none;
 	   			z-index:999;
 	   		 	li {
 	   		 		a {
-	   		 			padding: 6px 0px; 
-	   		 			width: 180px; 
-	   		 			background: none; 
+	   		 			padding: 6px 0px;
+	   		 			width: 180px;
+	   		 			background: none;
 	   		 			font-size:0.8em;
 	   		 			line-height: 1em;
 	   		 			color: #fff;
@@ -218,10 +214,10 @@ INDEX
 	   		 }
 		}
 	}
-	
+
 	/* 2.1 GENERAL DROPDOWN MENUS */
 	.nav li ul  { position: absolute; display: none; overflow: hidden; }
-	
+
 	.nav li:hover ul ul,
 	.nav li:hover ul ul ul,
 	.nav li:hover ul ul ul ul { display:none; overflow: hidden; }
@@ -229,7 +225,7 @@ INDEX
 	.nav li li:hover ul,
 	.nav li li li:hover ul,
 	.nav li li li li:hover ul  { display: block; overflow: visible; }
-	
+
 	/* 3. CONTAINERS & COLUMNS */
 	#header  {
 		.col-full  { position: relative; }
@@ -241,8 +237,7 @@ INDEX
 	}
 	#main.fullwidth, .layout-full #main, .col-full { max-width:960px; margin:0 auto; width:100% }
 	#main { width: 73.95%; /* 710 / 960 = 0.7395 */ }
-	#sidebar { margin-top: 0; width:21.88%; /* 210 / 960 = 0.2188 */ } 
-	.entry img { max-width:100%; }
+	#sidebar { margin-top: 0; width:21.88%; clear: none; /* 210 / 960 = 0.2188 */ }
 	.layout-full .entry img { max-width:100%; }
 	.layout-right-content {
 		#main  { float: right; }
@@ -251,13 +246,14 @@ INDEX
 	.layout-full #main  { width: 100%; }
 	.col-left { float: left; }
 	.col-right { float: right; }
-	
+
 	/* 4. FEATURED SLIDER */
 	#featured  article  header  {
 		position: absolute; bottom: 20px; left: 45px; width: 50%; height: 67px;
 		.entry  { height: 35px; }
+		&.no-meta { height: auto; }
 	}
-	.controls-container  {	
+	.controls-container  {
 		.flex-control-nav  { top: auto; bottom: 30px; }
 		.flex-direction-nav  { display: block; top: auto; bottom: 20px; left: 0; }
 	}
@@ -281,14 +277,16 @@ INDEX
 			}
 		}
 		#featured  {
-			
+			.flex-viewport {
+				overflow: visible!important;
+			}
 		}
 		.controls-container  {
 		    .flex-control-nav  { bottom: 50px; right: 30px; }
 		    .flex-direction-nav  { top: 20px; bottom: auto; }
 		}
 	}
-	
+
 	/* 5. HOMEPAGE SECTIONS */
 	.home-section  {
 		header  { float: left; margin-right: 4.16%; width: 21.88%; }
@@ -308,7 +306,7 @@ INDEX
 			}
 		}
 	}
-	
+
 	/* 6. PORTFOLIO */
 	#portfolio-gallery  {
 		h1  {
@@ -318,12 +316,17 @@ INDEX
 	}
 	#content .portfolio-item {
 		margin: 1em 10% 1em;
+        &:nth-child(4n+1) {
+            clear: both;
+        }
+        &:nth-child(4n+4) {
+            clear: right;
+        }
 	}
 	.single-portfolio {
 		.portfolio  { float: left; width:21.88%; /* 210 / 960 = 0.2188 */ }
-		.single-portfolio-gallery  { float: right; width: 73.95%; /* 710 / 960 = 0.7395 */ } 
+		.single-portfolio-gallery  { float: right; width: 73.95%; /* 710 / 960 = 0.7395 */ }
 	}
-	
 	/* 7. FOOTER WIDGETS */
 	#footer-widgets {
 		.block { margin-right:2.08%; /* 20 / 960 = 0.0208 */ float: left; }
@@ -344,7 +347,7 @@ INDEX
 			.footer-widget-4 { margin-right:0; }
 		}
 	}
-	
+
 	/* 8. MISC */
 	/* Footer Nav */
 	#footer  {
@@ -357,8 +360,8 @@ INDEX
 			}
 		}
 	}
-	
-		
+
+
 	/* Archive Header */
 	.archive_header {
 		.cat  { float: left; }
@@ -367,7 +370,7 @@ INDEX
 			display: inline;
 		}
 	}
-	
+
 	/* Post */
 	.post, .search-results .features, .search-results .page, .search-results .type-product, .search-results .type-portfolio  {
 		img.thumbnail  { margin-bottom: 2em; }
@@ -388,10 +391,10 @@ INDEX
 		}
 		.post-body  { float: right; width: 76.06%; } /* 0.7606 */
 	}
-	
+
 	/* Subcribe & Connect */
-	#connect { 
-		margin:0 0 1.5em; 
+	#connect {
+		margin:0 0 1.5em;
 		padding: 15px 0;
 		.newsletter-form {
 			&.fl  { float: left; }
@@ -409,22 +412,22 @@ INDEX
 	#main #connect {
 		.col-left, .col-right { width:48%; }
 	}
-	
+
 	/* Archives & Sitemap */
 	.page-template-template-archives-php .entry, .page-template-template-sitemap-php .entry  {
 		.fl  { float: left; width: 50%; }
 		.fr  { float: right; width: 50%; }
 	}
-	
+
 	/* Contact page template */
 	.page-template-template-contact-php {
 		.location-twitter  {
 			.col-left  { float: left; }
-			#office-location { 
+			#office-location {
 			    width: 48%; margin: 0;
 			}
 			.contact-social  {
-			    float: right; width: 48%; 
+			    float: right; width: 48%;
 			}
 		}
 	}

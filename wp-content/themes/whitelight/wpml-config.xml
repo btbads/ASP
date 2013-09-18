@@ -1,0 +1,25 @@
+<wpml-config>
+    <language-switcher-settings>
+        <key name="icl_additional_css">.icl_languages_selector img { vertical-align: baseline; } .icl_languages_selector ul li a { padding: 0px; }</key>
+    </language-switcher-settings>
+</wpml-config>
+    <custom-types>
+        <custom-type translate="1">portfolio</custom-type>
+		<custom-type translate="1">feedback</custom-type>
+		<custom-type translate="1">slide</custom-type>
+		<custom-type translate="1">features</custom-type>
+    </custom-types>
+    <taxonomies>
+        <taxonomy translate="1">portfolio-gallery</taxonomy>
+        <taxonomy translate="1">product_type</taxonomy>
+		<taxonomy translate="1">shop_order_status</taxonomy>
+		<taxonomy translate="1">product_tag</taxonomy>
+		<taxonomy translate="1">product_shipping_class</taxonomy>
+    </taxonomies>
+    <admin-texts>
+        <key name="woo_custom_intro_message" />
+        <key name="woo_features_area_title" />
+        <key name="woo_features_area_message" />
+        <key name="woo_features_area_link_text" />
+    </admin-texts> 
+</wpml-config>

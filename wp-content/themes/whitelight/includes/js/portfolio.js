@@ -77,9 +77,12 @@ jQuery(document).ready(function($){
 		//eq_heights();
 		evt.preventDefault();
 	})	
+														
+});
+
+jQuery( window ).load( function ( $ ) {
 
 	// Thanks @johnturner, I owe you a beer!
-	
 	var postMaxHeight = 0;
 	jQuery("#portfolio-gallery .portfolio-item").each(function (i) {
 		 var elHeight = jQuery(this).height();
@@ -91,8 +94,9 @@ jQuery(document).ready(function($){
 	jQuery("#portfolio-gallery .portfolio-item").each(function (i) {
 		jQuery(this).css('height',postMaxHeight+'px');
 	});
-														
+
 });
+
 
 /**
  * woo_move_last_class function.

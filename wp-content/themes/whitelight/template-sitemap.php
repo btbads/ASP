@@ -76,7 +76,34 @@
 		    		    	}
 		    		    	wp_reset_query();
 		    		    ?>
-		    		
+		    			
+		    			<div class="fix"></div>
+	    			
+	    				<?php if ( is_woocommerce_activated() ): ?>
+	    		    	<div class="fl" style="width:50%">												  	    
+		            	
+		        		    <h3><?php _e( 'Product Categories', 'woothemes' ) ?></h3>
+		        		    <ul>
+		        		    	<?php wp_list_categories( 'taxonomy=product_cat&pad_counts=1&title_li=' ); ?>
+						    </ul>
+		    			</div>				
+	    				
+						<div class="fl" style="width:50%">	    
+		    			    <h3><?php _e( 'Products', 'woothemes' ); ?></h3>
+		    			    <ul>
+			    			    <?php
+			    			    	$args = array( 'post_type' => 'product', 'posts_per_page' => 100, 'meta_query' => array( array('key' => '_visibility','value' => array('catalog', 'visible'),'compare' => 'IN')) );
+									$loop = new WP_Query( $args );
+									while ( $loop->have_posts() ) : $loop->the_post();
+								?>
+								<li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
+								<?php endwhile; ?>
+							</ul>
+	        	    	</div>
+	        			<?php endif; ?>
+	    				
+	    				<div class="fix"></div>
+	        	    	
 		    		</section><!-- /.entry -->
 		    						
 		        </article><!-- /.post -->                    

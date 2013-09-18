@@ -1,3 +1,0 @@
-<?php
-
-// WooCommerce overrides etc
