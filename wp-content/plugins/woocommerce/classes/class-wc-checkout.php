@@ -87,7 +87,7 @@ class WC_Checkout {
 				'type' => 'textarea',
 				'class' => array('notes'),
 				'label' => __( 'Order Notes', 'woocommerce' ),
-				'placeholder' => _x('Notes about your order, e.g. special notes for delivery.', 'placeholder', 'woocommerce')
+				'placeholder' => _x('Notes about your order, e.g. special notes for delivery. Put your DHL, UPS or Fedex account here if you want to use your account.', 'placeholder', 'woocommerce')
 				)
 			);
 
