@@ -16,6 +16,9 @@ require_once ($woocommerce_path . 'theme-install.php' );						// Theme installat
 /*-----------------------------------------------------------------------------------*/
 /* You can add custom functions below */
 /*-----------------------------------------------------------------------------------*/
+  // https://github.com/woothemes/woocommerce/issues/3998
+  // Fixing tax bug not being applied
+  add_filter( 'woocommerce_apply_base_tax_for_local_pickup', '__return_false' );
 
   /* Hung - 15/04/2013 hook to woocommerce */
 	function woocommerce_variable_empty_price_html_custom() {
