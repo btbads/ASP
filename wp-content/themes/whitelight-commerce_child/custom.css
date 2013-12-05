@@ -235,6 +235,7 @@ body{
 		border:none;
 	}
 
+
 /* CONTENT */
 	.home-blog{
 		/*border:1px solid #000000;*/
@@ -342,14 +343,14 @@ body{
 	/* PARTNERS LOGO ABOVE BEST SELLERS (next 2 declarations) */
 	#main .post-65
 	{
-		height: 463px;
+		height: 620px;
 		position: relative;
 	}
 	
 	#main .post-65 .asp-best-seller
 	{
 	    position: absolute;
-	    top: 189px;
+	    top: 340px;
 	}
 
 	/* CUSTOMERS */	
@@ -806,3 +807,11 @@ input.checkout-button.button.alt{
 #place_order{background-color: #3d8f00; text-transform:uppercase; font-style:italic;}
 
 /* -- end buttons -- */
+
+/* Center Videos */
+.centerVideo {
+	display: block;
+    	margin-left: auto;
+    	margin-right: auto;
+}
+/* -- end Center Videos -- */
