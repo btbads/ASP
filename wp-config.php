@@ -36,6 +36,9 @@ define('DB_COLLATE', '');
 /** Memory allocation limit to WordPress. */
 define( 'WP_MEMORY_LIMIT', '64M' );
 
+/** Limit Post revisions to 3 */
+define( 'WP_POST_REVISIONS', 3 );
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
