@@ -83,14 +83,20 @@
 </div><!-- /#wrapper -->
 <?php wp_footer(); ?>
 <?php woo_foot(); ?>
+<!-- ClickDesk Live Chat Service for websites UPDATED (3/2/2014)-->
 <script type='text/javascript'>
-var _glc =_glc || []; _glc.push('all_ag9jb250YWN0dXN3aWRnZXRyDgsSBXVzZXJzGOT16QQM');
-var glcpath = (('https:' == document.location.protocol) ? 'https://my.clickdesk.com/clickdesk-ui/browser/' :
-'http://my.clickdesk.com/clickdesk-ui/browser/');
-var glcp = (('https:' == document.location.protocol) ? 'https://' : 'http://');
-var glcspt = document.createElement('script'); glcspt.type = 'text/javascript';
-glcspt.async = true; glcspt.src = glcpath + 'livechat-new.js';
-var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(glcspt, s);
+	var _glc =_glc || []; _glc.push('all_ag9zfmNsaWNrZGVza2NoYXRyDgsSBXVzZXJzGOT16QQM');
+	var glcpath = (('https:' == document.location.protocol) ? 'https://my.clickdesk.com/clickdesk-ui/browser/' : 'http://my.clickdesk.com/clickdesk-ui/browser/');
+	var glcp = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+
+	var glcspt = document.createElement('script'); 
+	glcspt.type = 'text/javascript'; 
+	glcspt.async = true; 
+	glcspt.src = glcpath + 'livechat-new.js';
+
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(glcspt, s);
 </script>
+<!-- End of ClickDesk -->
 </body>
 </html>

@@ -110,7 +110,7 @@ require_once ($woocommerce_path . 'theme-install.php' );						// Theme installat
 
 
 	/**
- 	* Add the field to order emails
+ 	* Add the field to order emails (27/01/2014)
  	**/
 	add_filter('woocommerce_email_order_meta_keys', 'my_woocommerce_email_order_meta_keys');
  
@@ -120,7 +120,7 @@ require_once ($woocommerce_path . 'theme-install.php' );						// Theme installat
 		$keys[] = 'broker_phone';
 		return $keys;
 	}
-	
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Don't add any code below here or the sky will fall down */
