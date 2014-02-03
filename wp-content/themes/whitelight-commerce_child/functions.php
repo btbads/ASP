@@ -122,6 +122,20 @@ require_once ($woocommerce_path . 'theme-install.php' );						// Theme installat
 	}
 
 
+	/** 
+ 	* Manipulate default state and countries (3/2/2014)
+ 	*/
+	add_filter( 'default_checkout_country', 'change_default_checkout_country' );
+	add_filter( 'default_checkout_state', 'change_default_checkout_state' );
+ 
+	function change_default_checkout_country() {
+	  return 'US'; // country code
+	}
+ 
+	function change_default_checkout_state() {
+	  return 'CA'; // state code
+	}
+
 /*-----------------------------------------------------------------------------------*/
 /* Don't add any code below here or the sky will fall down */
 /*-----------------------------------------------------------------------------------*/
