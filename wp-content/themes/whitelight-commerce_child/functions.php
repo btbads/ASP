@@ -136,6 +136,19 @@ require_once ($woocommerce_path . 'theme-install.php' );						// Theme installat
 	  return 'CA'; // state code
 	}
 
+
+	/** 
+	* Authorize HTML in the Terms description (Category, tag)
+	*/
+	foreach ( array( 'pre_term_description' ) as $filter ) {
+    	remove_filter( $filter, 'wp_filter_kses' );
+	}
+ 
+	foreach ( array( 'term_description' ) as $filter ) {
+    	remove_filter( $filter, 'wp_kses_data' );
+	}
+
+
 /*-----------------------------------------------------------------------------------*/
 /* Don't add any code below here or the sky will fall down */
 /*-----------------------------------------------------------------------------------*/
