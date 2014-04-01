@@ -127,6 +127,40 @@ global $woocommerce;
 	
 	<?php //woocommerce_shipping_calculator(); ?>
 	
+	<table border="1">
+		<tbody>
+			<tr>
+				<td>Beneficiary’s Bank / Banque du bénéficiaire</td>
+				<td>CAISSE CENTRALE DESJARDINS<br>
+				1 Complexe Desjardins<br>
+				Montréal, QC, Canada, H5B 1B3<br>
+				Phone: 514-286-9441 or 1-800-361-6840</td>
+			</tr>
+			<tr class="alt-table-row">
+				<td>SWIFT/BIC Code</td>
+				<td>CCDQCAMM</td>
+			</tr>
+			<tr>
+				<td>Beneficiary’s Branch ID / Numéro d’identification de la succursale (caisse)</td>
+				<td>CC081530092</td>
+			</tr>
+			<tr class="alt-table-row">
+				<td>Beneficiary’s Account Number / Numéro de compte du bénéficiaire</td>
+				<td>0815300928300808</td>
+			</tr>
+			<tr>
+				<td>Beneficiary’s Complete Name / Nom complet du bénéficiaire</td>
+				<td>Allied Scientifc</td>
+			</tr>
+			<tr class="alt-table-row">
+				<td>Beneficiary’s Complete Address/ Adresse complète du bénéficiaire</td>
+				<td>13 rue Charron<br>
+				Gatineau, QC<br>
+				Canada, J8Y 1H4</td>
+			</tr>
+		</tbody>
+	</table>
+
 	<p><small><a href="http://alliedscientificpro.com/about/terms-conditions/">Note 2: Standard Terms and conditions applies</a><small></p>
 
     <p><small>Note 3: Shipping estimate is about 125$US</small></p>
