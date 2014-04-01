@@ -142,7 +142,7 @@ function quote_email()
 	}
 	
 	$zmailer = $woocommerce->mailer();
-	$email_heading = sprintf(__('Quote #2013-0486 - Allied Scientific Pro Canada', 'woocommerce'), '');
+	$email_heading = sprintf(__('Proforma Invoie #2014-0486 - Allied Scientific Pro Canada', 'woocommerce'), '');
 	$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
 	$subject = apply_filters( 'woocommerce_email_subject_quote_email', 'Allied Scientific Pro - Quote Request' );
 	
