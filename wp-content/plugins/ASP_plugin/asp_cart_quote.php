@@ -9,7 +9,7 @@ function zwoo_cart_quote(){
         	<input type="text" id="fbce_address" name="fbce_address" class="field s" size="50" value="<?php esc_attr_e( 'Address', 'woothemes' ); ?>" onfocus="if ( this.value == '<?php esc_attr_e( 'Address', 'woothemes' ); ?>' ) { this.value = ''; }" onblur="if ( this.value == '' ) { this.value = '<?php esc_attr_e( 'Address', 'woothemes' ); ?>'; }"><br/>
         	<input type="text" id="fbce_phone" name="fbce_phone" class="field s" size="50" value="<?php esc_attr_e( 'Phone', 'woothemes' ); ?>" onfocus="if ( this.value == '<?php esc_attr_e( 'Phone', 'woothemes' ); ?>' ) { this.value = ''; }" onblur="if ( this.value == '' ) { this.value = '<?php esc_attr_e( 'Phone', 'woothemes' ); ?>'; }">
         </div>
-		<img id="ajax-loader" style="display:none; width:16px; height:16px; margin-bottom:20px;" src="<?php echo plugins_url( 'images/ajax-loader.gif' , __FILE__ ); ?>" alt="" />&nbsp;&nbsp;<input id="btn_fcbe" name="btn_fcbe" class="checkout-button button" type="button" value="Get a quote now!">
+		<img id="ajax-loader" style="display:none; width:16px; height:16px; margin-bottom:20px;" src="<?php echo plugins_url( 'images/ajax-loader.gif' , __FILE__ ); ?>" alt="" />&nbsp;&nbsp;<input id="btn_fcbe" name="btn_fcbe" class="checkout-button button" type="button" value="Get a proforma invoice now!">
     </div>
 <?php		
 }
