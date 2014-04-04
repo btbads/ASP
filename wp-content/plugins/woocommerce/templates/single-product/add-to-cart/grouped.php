@@ -75,7 +75,6 @@ foreach ( $product->get_children() as $child_id ) {
 		<?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
 		<button type="submit" class="single_add_to_cart_button button alt"><?php echo apply_filters('single_add_to_cart_text', __( 'Add to cart', 'woocommerce' ), $product->product_type); ?></button>
-		<?php do_action('woocommerce_proceed_to_checkout'); ?>
 
 		<?php do_action('woocommerce_after_add_to_cart_button'); ?>
 
