@@ -150,7 +150,7 @@ global $woocommerce;
 			</tr>
 			<tr>
 				<td>Beneficiary’s Complete Name / Nom complet du bénéficiaire</td>
-				<td>Allied Scientifc</td>
+				<td>Allied Scientific</td>
 			</tr>
 			<tr class="alt-table-row">
 				<td>Beneficiary’s Complete Address/ Adresse complète du bénéficiaire</td>
